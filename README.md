@@ -5,6 +5,8 @@ Youtube Link: https://www.youtube.com/watch?v=BODavEUr5dw
 
 ![](images/ui1.png)
 
+![](images/ui2.png)
+
 ### Steps to Run
   #### Install virtualenv
   `py -2 -m pip install virtualenv`
