@@ -2,7 +2,7 @@
 A CRUD application that allows you to explore, add, edit, and search various Indian cuisine delicacies
 
 Youtube Link: https://www.youtube.com/watch?v=BODavEUr5dw
-![](images/ui1.PNG)
+![](images/ui1.png)
 
 ### Steps to Run
   #### Install virtualenv
