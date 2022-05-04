@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='add.css')}}">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../static/add_recipe.js"></script>
+<script>
+</script>
+
+<div class="container" id="main-container">
+    
+    <div class="row" id="title-row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="title-input" placeholder="Recipe Title*">   
+        </div>
+    </div>
+    <div id="title-error"></div>
+
+    <div class="row" id="author-row">
+        <div class="form-group">
+            <input type="text" class="form-control" id="author-input" placeholder="Recipe Credit*">   
+        </div>
+    </div> 
+    <div id="author-error"></div>
+    <hr>
+    <div class="row" id="recipe-pointers-row">
+        <div class="col-md-1 col-sm-1 col-1">       
+        </div>        
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <input type="text" class="form-control" id="prep-time-input" placeholder="Prep Time (mins)*"> 
+            </div>   
+        </div> 
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <input type="text" class="form-control" id="cook-time-input" placeholder="Cook Time (mins)*"> 
+            </div>            
+        </div>
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <input type="text" class="form-control" id="total-time-input" placeholder="Total Time (mins)*"> 
+            </div>            
+        </div>
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <input type="text" class="form-control" id="servings-input" placeholder="Servings*"> 
+            </div>            
+        </div>
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <input type="text" class="form-control" id="rating-input" placeholder="Rating ( / 5)*"> 
+            </div>            
+        </div>
+        <div class="col-md-1 col-sm-1 col-1">       
+        </div>
+    </div>
+    <div class="row" id="pointers-errors">
+        <div class="col-md-1 col-sm-1 col-1">       
+        </div>        
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <div id="prep-time-error"></div>
+            </div>   
+        </div> 
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <div id="cook-time-error"></div>
+            </div>          
+        </div>
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <div id="total-time-error"></div>
+            </div>             
+        </div>
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <div id="servings-error"></div>
+            </div>               
+        </div>
+        <div class="col-md-2 col-sm-2 col-2">
+            <div class="row">
+                <div id="rating-error"></div>
+            </div>          
+        </div>
+        <div class="col-md-1 col-sm-1 col-1">       
+        </div>
+    </div>
+    <hr> 
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-6">
+            <div class="row" id="sections">
+                <div class="view-ingredients">
+                    <div id="add-headers">INGREDIENTS*</div>    
+                    <div class="form-group">
+                        <textarea class="form-control" id="ingredients-input" cols="60" rows="4" placeholder="Two cups of milk &#10;1 Tablespoon of sugar"></textarea>
+                    </div>
+                    <div id="ing-error"></div>  
+                </div>
+                 
+            </div>
+            
+            <div class="row" id="sections">
+                <div class="view-ingredients">
+                    <div id="add-headers">INSTRUCTIONS*</div> 
+                    <div class="form-group">
+                        <textarea class="form-control" id="instructions-input" cols="60" rows="5" placeholder="Mix sugar and flour &#10;Melt the butter"></textarea>
+                    </div>
+                    <div id="inst-error"></div>   
+                </div>
+                
+            </div>
+
+            <div class="row" id="sections">
+                <div class="view-ingredients">
+                    <div id="add-headers">ABOUT*</div> 
+                    <div class="form-group">
+                        <textarea class="form-control" id="about-input" cols="60" rows="4" placeholder="This creamy rice pudding is delicately flavored with cardamom and full of nuts.."></textarea>
+                    </div>
+                    <div id="about-error"></div>   
+                </div>
+                
+            </div>
+               
+        </div>
+        <div class="col-md-6 col-sm-6 col-6">
+            <div id="image-error"></div> 
+            <div class="row">
+                <div id="add-headers">IMAGE*</div> 
+                <input type="text" class="form-control" id="image-input" placeholder="Recipe Image (URL)"> 
+                <div class="row">
+                    <img id="preview-img" src = "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/63/2021/09/Low-calorie-meals-620x413.jpg" alt=" Recipe Image "/>
+                </div>
+               
+            </div>
+              
+            <hr>
+            <div id="about-error"></div>   
+            
+            <div class="row" id="view-summary">
+                <div id="add-headers">RECIPE TAGS*</div> 
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <textarea class="form-control" id="courses-input" cols="60" rows="2" placeholder="Lunch &#10;Indian"></textarea>
+                </div>
+            </div>
+            <div id="courses-error"></div>   
+        </div>    
+       
+    </div>
+   
+    <div id="buttons-row">
+        <button type="button" class="btn btn-outline-primary" id="submit-recipe">Submit Recipe</button>
+    </div>    
+    
+
+</div>
+{% endblock %}
+
+
+

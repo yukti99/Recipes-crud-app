@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type="text/javascript" src="../static/home_recipes.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+    let recipes = {{recipes|tojson}};
+    console.log(recipes);
+</script>
+<div class="container-fluid">  
+    <div class="row" id="main-band">
+        <div class="row" >
+            <div class="col-md-12 col-s-12 col-xs-12 col-12" >
+                <!-- <h1 id="site-title"> Healthy. Happy. Life </h1> -->
+                <h1 id="site-title"> C<span id="emoji">&#10084;&#10084;</span>KFULLY </h1>
+                <p id="desp"> Feeling homesick? Want to make some amazing recipes at the comfort of your home?<br> 
+                    You have come to the right place! 
+                     </p>  
+            </div>                 
+        </div>
+    </div> 
+    <div class="container-fluid" id="recipe-container">  
+        <div class="home-recipes">
+        </div> 
+    </div>  
+    <div class="row" id="end-band">
+        <div class="row" >
+            <div class="col-md-12 col-s-12 col-xs-12 col-12" >
+                <p id="desp2"> Contact us at yuktikhurana99@gmail.com </p>  
+            </div>                 
+        </div>
+    </div> 
+   
+</div>
+
+{% endblock %}

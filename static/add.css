@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap');
+
+
+body{
+    /* background-color:#eceff1; */
+}
+#main-container{
+    margin-top:20px;
+    display: block;
+}
+#heading{
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color:#37474f;
+}
+#recipe-info{
+    font-size:15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:-5px;
+}
+#info{
+    padding-left:-15px;
+}
+
+.info-header{
+    font-weight: bold;
+    font-size:16px;
+    font-family:'Alegreya';
+    padding-left: 30px;
+    color:#37474f;
+}
+
+
+#prep-time-input{
+    margin:auto;
+    width:30%;
+    
+}
+
+#view-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height:100%;
+}
+#add-headers{
+    font-size:20px;
+    font-family:'Alegreya';
+    font-weight:bold;
+    color:#37474f;
+  
+}
+
+#ingredients{
+  padding-bottom:7px;
+  font-weight:lighter;
+}
+
+#summary{
+    text-align: justify;
+    text-justify: inter-word;
+    font-weight:lighter;
+    padding-bottom:7px;
+}
+
+#view-summary{
+    margin-top:20px;
+}
+
+
+#instructions{
+    text-align: justify;
+    text-justify: inter-word;
+    font-weight:lighter;
+    padding-bottom:7px;
+    margin-right:25px;
+
+
+}
+#sections{
+    margin-top:-20px;
+}
+
+.checked {
+    color: orange;
+}
+
+#rating{
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+#courses{
+    font-weight: lighter;
+    margin-top:-30px;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right:10px;
+}
+
+#author{
+    margin-top:-15px;
+    margin-bottom:-15px;
+    width:100%;
+    font-size:15px;
+    text-align: center;
+    color:gray;
+    
+}
+
+/* New code for add3 recipe */
+
+#title-row,#author-row{
+    margin:auto;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#title-input{
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    text-align: center;
+    padding:25px;
+}
+
+#author-input{
+
+    margin-top:5px;
+    margin-bottom:5px;
+    width:100%;
+    font-size:15px;
+    text-align: center;
+    color:gray;
+    align-items: center;
+    justify-content: center;    
+
+}
+
+
+#prep-time-input,#cook-time-input, #total-time-input,#servings-input, #rating-input{
+
+    margin-left:20px;
+    margin-right:20px;
+    width:100%;
+    font-size:15px;
+    text-align: center;
+    color:gray;
+    align-items: center;
+    justify-content: center;
+    display:block;
+
+}
+
+#quick-headers{
+    display:block;
+    margin-right:-50px;
+}
+
+#recipe-pointers-row{
+    padding-top:7px;
+}
+
+#title-error, #author-error{
+    margin-top:-35px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:10px;
+    width:100%;
+    text-align: center;
+    font-size:13px;
+    color:rgb(189, 11, 11);
+
+
+}
+
+#prep-time-error,#cook-time-error,#total-time-error,#servings-error, #rating-error{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:-10px;
+    width:100%;
+    text-align: center;
+    font-size:13px;
+    color:rgb(189, 11, 11);
+
+
+}
+#ing-error, #inst-error{
+    margin-top:-15px;
+    font-size:13px;
+    color:rgb(189, 11, 11);
+    margin-left:15px;
+
+}
+#about-error, #courses-error{
+    margin-left:15px;
+    margin-top:-11px;
+    font-size:13px;
+    text-align: left;
+    color:rgb(189, 11, 11);
+
+
+}
+
+#recipe-pointers-row{
+    margin-top:-10px;
+}
+
+#image-upload{
+    margin-left:20px;
+    width:50%;
+    height:100%;
+}
+
+#preview-recipe{
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    margin-top:20px;
+    margin-bottom:10px;
+    
+}
+#submit-recipe{
+    width:20%;
+    margin-left:40%;
+    margin-right:40%;
+    margin-bottom:10px;
+    background-color: #f28500;
+    color:whitesmoke; 
+    border-color:#f28500;
+}
+#submit-recipe:hover{
+    background-color: whitesmoke;
+    color:#f28500;
+    border-color:#f28500;
+}
+
+#image-input{
+    margin:auto;
+    width:60%;
+}
+
+#preview-img{
+    margin-top:30px;
+    margin-left:20px;
+    width:70%;
+    border: 2px solid #555;
+    border-color:rgb(110, 109, 109);
+}
+
+#image-error{
+    margin-left:-2rem; 
+    text-align: center;
+    font-size:13px;
+    color:rgb(189, 11, 11);
+    padding-bottom:10px;
+}
+
+#feedback-row{
+    /* font-family: 'Alegreya'; */
+    font-size:18px;
+    margin:auto;
+    text-align: center;
+    width:100%;
+    color:#607d8b;
+    justify-content: center;
+    /* color:#37474f; */
+}
+
+#view-created-recipe{
+    background-color: whitesmoke;
+    color:#00838f;
+    border-color:#00838f ;
+    width:10%;
+    margin-left:45%;
+    margin-right:45%;
+    margin-bottom:30px;
+
+}
+#view-created-recipe:hover{
+    background-color: #00838f;
+    color:whitesmoke; 
+}
+
+.navbar{
+    background-color: #00838f !important;
+   
+}
+#nav-headers{
+    color:whitesmoke;
+}
+#nav-headers:hover{
+    color:#e0f7fa;
+}
+
+/* #search-btn{
+    background-color: whitesmoke;
+    color:#00838f;
+    border-color:whitesmoke ;
+}
+
+#search-btn:hover{
+    background-color: #00838f;
+    color:whitesmoke; 
+} */
+
+#search-btn{
+    background-color: whitesmoke;
+    /* color:#00838f;
+    border-color:#00838f ; */
+    color:#f28500;
+    border-color:#f28500 ;
+    
+}
+
+#search-btn:hover{
+    background-color: #f28500;
+    /* color:whitesmoke;  */
+    color:#37474f;
+}
+
+.nav-link{
+    color:whitesmoke !important;
+}
+.nav-link:hover{
+    color: #eaf1f1b0 !important
+}
+
+
+

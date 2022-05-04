@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='search.css')}}"> 
+<script type="text/javascript" src="../static/search_results.js"></script>
+<script>
+    let results = {{results|tojson}};
+    console.log("inside html:",results);
+    let search_text = {{search_text|tojson}};
+    console.log("inside html:",search_text);
+
+</script>
+<div class="container-fluid" id="main"> 
+    <div class="welcome-content">
+           <span id="bold-text">
+            </span>
+        </p>
+    </div>  
+    <div class="recipes">
+    </div>   
+</div>
+{% endblock %}
+

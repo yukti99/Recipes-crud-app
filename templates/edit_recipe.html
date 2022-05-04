@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='edit.css')}}">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../static/edit_recipe.js"></script>
+<script>
+    let recipe = {{recipe|tojson}};
+    console.log(recipe)
+</script>
+
+<div class="container" id="main-container">
+    <!-- <div class="row" id="title-icon">
+        <div class="col-md-4">           
+        </div>
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-4">          
+        </div>
+       
+    </div>     -->
+    <div class="row" id="heading">        
+        <p id="recipe-title">{{recipe.title}}</p> 
+        <i class="fas fa-edit" id="edit-title"></i>
+    </div>
+    
+    <div id="title-error"></div>
+    
+    <div class="row" id="author-icon">
+        <div class="col-md-4">           
+        </div>
+        <div class="col-md-4">
+            <i class="fas fa-edit" id="edit-author"></i>
+        </div>
+        <div class="col-md-4">          
+        </div>
+       
+    </div>    
+    
+    <div class="row" >
+        <p id="author">{{recipe.author}}</p> 
+    </div>    
+    <div id="author-error"></div>
+    <hr>
+    <div class="row" id="pointers-icon">
+        <i class="fas fa-edit" id="edit-pointers"></i>
+    </div>
+    <div class="row" id="recipe-info">
+        <p class="info-header">PREP: </p><p id="info"><p id="edit-prep">{{recipe.prep_time}}</p></p><p id="info">MINS</p><p id="info">|</p>
+        <p class="info-header">COOK: </p><p id="info"><p id="edit-cook">{{recipe.cooking_time}}</p></p><p id="info">MINS</p><p id="info">|</p>
+        <p class="info-header">TOTAL: </p><p id="info"><p id="edit-total">{{recipe.total_time}}</p></p><p id="info">MINS</p><p id="info">|</p>
+        <p class="info-header">SERVINGS: </p><p id="info"><p id="edit-servings">{{recipe.servings}}</p></p><p id="info">|</p>
+        <p class="info-header">RATING: </p><p id="info"><p id="edit-rating">{{recipe.rating}}</p><p id="info">
+            {% for ing in recipe.stars %}
+                <span class="fa fa-star checked"></span>
+            {% endfor %}
+            {% for ing in recipe.empty %}
+                <span class="fa fa-star"></span>
+            {% endfor %}
+        </p>
+    </div>
+  
+    <div class="row" id="info-errors">
+       <div id = "info-error"></div>
+    </div>
+    
+    <hr>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-6">
+            <div class="row" id="sections">
+                <div class="view-ingredients" id="add-ing">
+                    <div id="group">   
+                        <div id="add-headers">INGREDIENTS</div>          
+                        <i class="fas fa-edit" id="edit-ing"></i> 
+                    </div>    
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-6">
+                            {% for ing in recipe.ing1 %}
+                            <div id="ingredients" > {{ing}} </div>
+                            {% endfor %}
+                        </div>                
+                        <div class="col-md-6 col-sm-6 col-6">
+                            {% for ing in recipe.ing2 %}
+                            <div id="ingredients" > {{ing}} </div>
+                            {% endfor %}
+                        </div>
+                    </div> 
+                    <div id="ing-error"></div>  
+                </div>
+            </div>
+            <div class="row" id="sections">
+                <div class="view-ingredients" id="add-inst"> 
+                    <div id="group">   
+                        <div id="add-headers">INSTRUCTIONS</div>          
+                        <i class="fas fa-edit" id="edit-inst"></i> 
+                    </div>   
+                    <div id="instructions">
+                        {% for inst in recipe.instructions %}
+                        <div id="ingredients" >{{inst}}</div>
+                        {% endfor %}
+                    </div>
+                    <div id="inst-error"></div>  
+        
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-6 col-sm-6 col-6">
+            <div class="row" id="sections">
+                <div class="view-ingredients" id="add-image">
+                    <div id="group">   
+                        <div id="add-headers">IMAGE</div>          
+                        <i class="fas fa-edit" id="edit-image"></i> 
+                    </div>    
+                    <div class="row">
+                        <img id="edit-img-view" alt="Recipe Image" src={{recipe.image}}  >
+                    </div> 
+                    <div id="image-error"></div>  
+                </div>
+            </div>
+            <div class="row" id="sections">
+                <div class="view-ingredients" id="add-about">
+                    <div id="group">   
+                        <div id="add-headers">ABOUT</div>          
+                        <i class="fas fa-edit" id="edit-about"></i> 
+                    </div>   
+                    <div id="summary">{{recipe.summary}}</div>
+                    <div id="about-error"></div>   
+                </div>
+            </div>
+
+            <div class="row" id="sections">
+                <div class="view-ingredients" id="add-courses">
+                    <div id="group">   
+                        <div id="add-headers">RECIPE TAGS</div>          
+                        <i class="fas fa-edit" id="edit-courses"></i> 
+                    </div>   
+                    <div class="row" id="courses-id">
+                        {% for i in recipe.courses %}
+                            <div id="courses">{{i}}</div><br>
+                        {% endfor %}
+                    </div>      
+                    <div id="courses-error"></div>   
+                </div>
+                
+            </div>
+           
+
+        </div>    
+       
+    </div>
+   
+    <div id="buttons-row">
+        <button type="button" class="btn btn-outline-primary" id="discard-changes">Discard Changes</button>
+        <button type="button" class="btn btn-outline-primary" id="submit-recipe">Update Recipe</button>
+    </div>    
+    
+
+</div>
+{% endblock %}
+
+
+

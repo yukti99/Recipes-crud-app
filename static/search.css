@@ -1,0 +1,27 @@
+.navbar{
+    background-color: #00838f !important;
+   
+}
+#nav-headers{
+    color:whitesmoke;
+}
+#nav-headers:hover{
+    color:#e0f7fa;
+}
+
+#search-btn{
+    background-color: whitesmoke;
+    color:#00838f;
+    border-color:whitesmoke ;
+}
+
+#search-btn:hover{
+    background-color: #00838f;
+    color:whitesmoke; 
+}
+
+.nav-link{
+    color:whitesmoke !important;
+}
+.nav-link:hover{
+    color: #eaf1f1b0 !important

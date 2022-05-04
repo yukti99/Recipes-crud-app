@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='view.css')}}">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="../static/view_recipe.js"></script>
+<script>
+    let recipe = {{recipe|tojson}};
+    console.log("on view page = ",recipe);
+    console.log(recipe.image);
+    console.log(recipe.courses);
+</script>
+
+<div class="container" id="main-container">
+    <div class="row" >
+        <button type="button" class="btn btn-outline-primary" id="edit-btn">EDIT</button>
+    </div>
+    <div class="row" id="heading">
+        <p>{{recipe.title}}</p> 
+    </div>
+    <div class="row" >
+        <p id="author">{{recipe.author}}</p> 
+    </div>    
+    <hr>
+    <div class="row" id="recipe-info">
+        <p class="info-header">PREP: </p><p id="info">{{recipe.prep_time}} MINS</p><p id="info">|</p>
+        <p class="info-header">COOK: </p><p id="info">{{recipe.cooking_time}} MINS</p><p id="info">|</p>
+        <p class="info-header">TOTAL: </p><p id="info">{{recipe.total_time}} MINS</p><p id="info">|</p>
+        <p class="info-header">SERVINGS: </p><p id="info">{{recipe.servings}}</p><p id="info">|</p>
+        <p class="info-header">RATING: </p><p id="info">{{recipe.rating}}
+            {% for ing in recipe.stars %}
+                <span class="fa fa-star checked"></span>
+            {% endfor %}
+            {% for ing in recipe.empty %}
+                <span class="fa fa-star"></span>
+            {% endfor %}
+        </p>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-6">
+            <div class="row" id="sections">
+                <div class="view-ingredients">
+                    <div id="view-headers">INGREDIENTS</div>    
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-6">
+                            {% for ing in recipe.ing1 %}
+                            <div id="ingredients" > {{ing}} </div>
+                            {% endfor %}
+                        </div>                
+                        <div class="col-md-6 col-sm-6 col-6">
+                            {% for ing in recipe.ing2 %}
+                            <div id="ingredients" > {{ing}} </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="sections">
+                <div class="view-ingredients">
+                    <div id="view-headers">INSTRUCTIONS</div> 
+                    <div id="instructions">
+                        {% for inst in recipe.instructions %}
+                        <div id="ingredients" >{{inst}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-6">
+            <div class="row">
+                <img id="view-img"  src={{recipe.image}} alt="Recipe Image" onerror="this.onerror=null; this.src='https://i0.wp.com/www.mimisrecipes.com/wp-content/uploads/2018/12/recipe-placeholder-featured.jpg?resize=700%2C400&ssl=1'" />
+            </div>
+            <hr>
+            <div class="row" id="view-summary">
+                <div id="view-headers">ABOUT</div> <br>
+                
+            </div>
+            <div id="summary">{{recipe.summary}}</div>
+            
+            {% if (recipe.courses is defined) and recipe.courses %}
+            <div class="row" id="view-summary">
+                <div id="view-headers">RECIPE TAGS</div> 
+            </div>
+            <div class="row courses-class" id="view-summary">
+                    <!-- {% for i in recipe.courses %}
+                        <div id="courses">{{i}}</div><br>
+                    {% endfor %} -->
+            </div>
+            {% endif %}
+            
+            
+        </div>        
+    </div>
+
+    
+
+</div>
+{% endblock %}
+
+
+
