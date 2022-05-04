@@ -27,3 +27,7 @@ Youtube Link: https://www.youtube.com/watch?v=BODavEUr5dw
   or  
   `python server.py `
 
+### References
+Reference for recipes and images:
+
+https://www.thespruceeats.com/easy-and-quick-indian-recipes-4118365
