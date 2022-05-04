@@ -30,6 +30,6 @@ Youtube Link: https://www.youtube.com/watch?v=BODavEUr5dw
   `python server.py `
 
 ### References
-This site is created for educational purposes as a course project.
-Reference for the recipes and images used as graphics:
+This site is created for educational purposes as a course project.<br>
+Reference for the recipes and images used as graphics: <br>
 https://www.thespruceeats.com/easy-and-quick-indian-recipes-4118365
